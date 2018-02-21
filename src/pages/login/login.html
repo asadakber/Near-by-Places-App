@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>login</ion-title>
+    <ion-buttons end>
+        <button ion-button clear (click)="GoToSignupPage()">Signup</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="loginForm">
+  <ion-list>
+    <ion-item>
+      <ion-label> <ion-icon ios="ios-mail" md="md-mail"></ion-icon></ion-label>
+      <ion-input formControlName="userEmail" type="text" placeholder="Email Address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><ion-icon ios="ios-lock" md="md-lock"></ion-icon></ion-label>
+      <ion-input formControlName="userPassword" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="style">
+    <button [disabled]="!this.loginForm.valid"  class="style" ion-button (click)="login()">Submit</button></div>
+</form>
+
+</ion-content>

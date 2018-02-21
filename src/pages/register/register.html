@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>register</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button clear (click)="GoToLoginPage()">Login</button>
+  </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="signupForm">
+  <ion-list>
+      <ion-item>
+          <ion-label>  <ion-icon ios="ios-person" md="md-person"></ion-icon></ion-label>
+          <ion-input formControlName="userName" type="text" placeholder="Username"></ion-input>
+        </ion-item>
+    <ion-item>
+      <ion-label> <ion-icon ios="ios-mail" md="md-mail"></ion-icon></ion-label>
+      <ion-input formControlName="userEmail" type="text" placeholder="Email Address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><ion-icon ios="ios-lock" md="md-lock"></ion-icon></ion-label>
+      <ion-input formControlName="userPassword" type="password"  placeholder="Password"></ion-input>
+    </ion-item>
+  </ion-list>
+    <div class="style">
+    <button [disabled]="!this.signupForm.valid"  class="style" ion-button (click)="signup()">Submit</button></div>
+</form>
+
+</ion-content>
